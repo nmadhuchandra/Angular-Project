@@ -1,43 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http'
+import { HttpErrorResponse } from '@angular/common/http'
 @Component({
   selector: 'app-create-employee',
   templateUrl: './create-employee.component.html',
   styleUrls: ['./create-employee.component.css']
 })
 export class CreateEmployeeComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor (private httpService: HttpClient){
+    
   }
-
-}
-import { mobiscroll, MbscDatetimeOptions, MbscFormOptions } from '@mobiscroll/angular';
-
-mobiscroll.settings = {
-    theme: 'ios'
-};
-
-@Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html'
-})
-export class AppComponent {
-    mobile: Date;
-    desktop: Date;
-
-    mobileSettings: MbscDatetimeOptions = {
-        display: 'bubble'
-    };
-
-    desktopSettings: MbscDatetimeOptions = {
-        display: 'bubble',
-        touchUi: false
-    };
-
-    formSettings: MbscFormOptions = {
-        inputStyle: 'box'
-    };
-
+  posts: string [];
+  ngOnInit(){
+    this.httpService.get('https://jsonplaceholder.typicode.com/posts').subscribe(
+    data =>
+    {
+      this.posts = data as string[];
+    },
+      (err:HttpErrorResponse) => {
+        console.log(err.message)
+    }
+    );
+  }
 }

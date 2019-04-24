@@ -1,3 +1,26 @@
 <p>
   list-employee works!
 </p>
+<div>
+    <!-- <table *ngIf="posts">
+        <tr> -->
+            <!-- <th>UserId</th>
+            <th>ID</th> -->
+            <!-- <th>title</th> -->
+            <!-- <th>body</th> -->
+        <!-- </tr> -->
+        <!-- <tr *ngFor="let posts of posts"> -->
+            <!-- <td>{{posts.userId}}</td>
+            <td>{{posts.id}}</td> -->
+            <!-- <td>{{posts.title}}</td> -->
+            <!-- <td>{{posts.body}}</td> -->
+        <!-- </tr>
+    </table> -->
+    <h4>Title</h4>
+    <div>
+        <p>{{selectedPost.body}}</p>   
+    </div>
+    <li *ngFor="let post of posts" (click)="onSelect(post)">{{post.title}}</li>
+    
+    
+</div>
