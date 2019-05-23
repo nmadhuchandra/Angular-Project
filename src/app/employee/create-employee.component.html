@@ -1,4 +1,10 @@
 <p>
   create-employee works!
 </p>
-<li *ngFor="let posts of posts">{{posts.body}}</li>
+<div *ngFor="let u of user">
+  <ul>{{u.name}}</ul>
+  <li>{{u.username}}</li>
+  <li>{{u.email}}</li>
+  <li>{{u.address.street}}</li>
+  <li>{{u.address.geo.lat}}</li>
+</div>

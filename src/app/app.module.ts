@@ -8,12 +8,15 @@ import { ListEmployeeComponent } from './employee/list-employee.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CompanyComponent } from './company/company.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DisplayComponent } from './display/display.component';
+import { ApiService } from './api.service'
 @NgModule({
   declarations: [
     AppComponent,
     CreateEmployeeComponent,
     ListEmployeeComponent,
-    CompanyComponent
+    CompanyComponent,
+    DisplayComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

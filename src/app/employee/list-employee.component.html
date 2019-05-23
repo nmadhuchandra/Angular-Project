@@ -18,9 +18,9 @@
     </table> -->
     <h4>Title</h4>
     <div>
-        <p>{{selectedPost.body}}</p>   
+        <ul *ngFor="let use of user">{{use.name}}</ul>
+        <li *ngFor="let post of newPost" routerLink="/display/{{post.id}}" (click)="onSelect(post)">{{display.title}}</li>
     </div>
-    <li *ngFor="let post of posts" (click)="onSelect(post)">{{post.title}}</li>
     
     
 </div>

@@ -6,6 +6,7 @@ import { CreateEmployeeComponent } from './employee/create-employee.component';
 import { ListEmployeeComponent} from './employee/list-employee.component';
 import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 import { CompanyComponent } from './company/company.component';
+import { DisplayComponent } from './display/display.component';
 
 @NgModule({
 
@@ -16,6 +17,8 @@ import { CompanyComponent } from './company/company.component';
       { path:'company', component: CompanyComponent},
       { path: 'list', component: ListEmployeeComponent},
       {path: 'create', component: CreateEmployeeComponent},
+      {path: 'display', component: DisplayComponent},
+      {path: 'display/:postId', component: DisplayComponent},
       { path: '', redirectTo:'/company', pathMatch: 'full'}
     ])
   ],
